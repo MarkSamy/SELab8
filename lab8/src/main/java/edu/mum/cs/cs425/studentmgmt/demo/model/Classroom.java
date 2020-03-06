@@ -13,8 +13,18 @@ public class Classroom {
     private String buildingName;
     @Column(name = "roomNumber")
     private String roomNumber;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "classroom")
+
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Student> studentList;
+
+    public List<Student> getStudentList() {
+        return studentList;
+    }
+
+    public void setStudentList(List<Student> studentList) {
+        this.studentList = studentList;
+    }
+
     @Override
     public String toString() {
         return "Classroom{" +
